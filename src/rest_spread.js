@@ -32,6 +32,43 @@ console.log(...numeros);
 const timesDeFutebolDeSp = ['Santos', 'Palmeiras', 'São Paulo','Bragantino'];
 const timesDeFutebolDoRio = ['Flamengo', 'Vasco', 'Florminense', 'Faísca-Fogo'];
 
-const timesDeFutebol = timesDeFutebolDeSp.concat(timesDeFutebolDoRio);
+            //forma sem Spread de juntar 2 arrays.
+const timesDeFutebol1 = timesDeFutebolDeSp.concat(timesDeFutebolDoRio);   
+            //forma com o Spread
+const timesDeFutebol = [...timesDeFutebolDeSp, ...timesDeFutebolDoRio];
 
 console.log(timesDeFutebol);
+
+
+//nesse exemplo, o carro da ana tapegando todas as caracteristicas do carro da julia, mudamos apenas o motor. USANDO O SPREAD.
+
+const carroDaJulia = {
+    modelo: 'gol',
+    marca: 'vw',
+    motor: 1.6
+} 
+
+const carroDaAna = {
+    ...carroDaJulia,
+    motor: 1.8
+}
+
+console.log(carroDaJulia);
+console.log(carroDaAna);
+
+            //DESESTRUTURAÇÃO DE OBJETOS
+
+const { motor: motorDoCarroDaAna} = carroDaAna;          //acessou a propriedade motor, e deu um apelido para nao dar problema na hora de declarar o motor do carro da julia
+const { motor: motorDoCarroDaJulia} = carroDaJulia;
+
+console.log(motorDoCarroDaAna);
+console.log(motorDoCarroDaJulia);
+
+            //DESESTRUTURAÇÃO DE ARRAYs
+
+const [item1, item2, item3, ...outrosTimes] = timesDeFutebol;
+
+console.log(item1);
+console.log(item2);
+console.log(item3);
+console.log(outrosTimes);
